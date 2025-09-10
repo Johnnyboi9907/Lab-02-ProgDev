@@ -4,9 +4,13 @@
  */
 package javaapplication1;
 
+
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -19,17 +23,27 @@ public class JavaFX extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        launch(args);
     }
     
       @Override
     public void start(Stage stage) {
        BorderPane root = new BorderPane();
+       StackPane middle = new StackPane();
+       
+        Label top = new Label("Random game");
+        Label bottom = new Label("Waiting...");
+        Label lblImage = new Label("");
+        
+        root.setTop(top);
+        root.setBottom(bottom);
+        
+        middle.getChildren().addAll(lblImage);
         
        Scene scene = new Scene(root, 250, 300); 
        stage.setTitle("Java Games");
        stage.setScene(scene);
-       primaryStage.show();
+       stage.show();
     }
     
 }
