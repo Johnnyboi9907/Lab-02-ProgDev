@@ -12,6 +12,9 @@ import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.scene.image.*;
+import java.util.Random;
+
 
 /**
  *
@@ -39,6 +42,13 @@ public class JavaFX extends Application {
         root.setBottom(bottom);
         
         middle.getChildren().addAll(lblImage);
+        root.setCenter(middle);
+        
+        Random random = new Random();
+        int num = random.nextInt(20) + 101;
+        String filepath = "file:images\\" + num + ".jpg";
+        Image image = new Image(filepath);
+        lblImage.setGraphic(new ImageView(image));
         
        Scene scene = new Scene(root, 250, 300); 
        stage.setTitle("Java Games");
